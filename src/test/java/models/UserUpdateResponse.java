@@ -3,7 +3,9 @@ package models;
 import lombok.Data;
 
 @Data
-public class UserCreateRequest {
+public class UserUpdateResponse {
+
     private String name;
     private String job;
+    private String updatedAt;
 }
