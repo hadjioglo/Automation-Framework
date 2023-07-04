@@ -9,7 +9,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 
 public class TestUsers {
 
@@ -46,10 +48,15 @@ public class TestUsers {
     @Test
     @SneakyThrows(IOException.class)
     public void updateUser() {
+
+        Properties properties = new Properties();
+        FileInputStream propertiesFile = new FileInputStream("user.properties");
+        properties.load(propertiesFile);
+
         UserCreateUpdateRequest request = new UserCreateUpdateRequest();
-        String expectedName = "morpheus";
+        String expectedName = properties.getProperty("userName");
         String expectedJob = "zion resident";
-        int userId = 2;
+        int userId = Integer.parseInt(properties.getProperty("userId"));
 
         request.setJob(expectedJob);
         request.setName(expectedName);
