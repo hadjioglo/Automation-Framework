@@ -1,5 +1,6 @@
 package endpoint;
 
+import models.SingleUserGetResponse;
 import models.UserCreateUpdateRequest;
 import models.UserCreateResponse;
 import models.UserUpdateResponse;
@@ -15,4 +16,7 @@ public interface UserService {
 
     @PUT("api/users/{userId}")
     Call<UserUpdateResponse> updateUser(@Path("userId") int userId, @Body UserCreateUpdateRequest userCreateUpdateRequest);
+
+    @GET("api/users/{userId}")
+    Call<SingleUserGetResponse> getSingleUser(@Path("userId") int userId);
 }

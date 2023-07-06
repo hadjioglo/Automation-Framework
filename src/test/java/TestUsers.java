@@ -1,5 +1,6 @@
 import endpoint.UserService;
 import lombok.SneakyThrows;
+import models.SingleUserGetResponse;
 import models.UserCreateUpdateRequest;
 import models.UserCreateResponse;
 import models.UserUpdateResponse;
@@ -65,5 +66,16 @@ public class TestUsers {
         Assert.assertNotNull(response.body());
         Assert.assertEquals(expectedName, response.body().getName());
         Assert.assertEquals(expectedJob, response.body().getJob());
+    }
+
+    @Test
+    @SneakyThrows(IOException.class)
+    public void getSingleUser() {
+
+        Response<SingleUserGetResponse> response = userService.getSingleUser(2).execute();
+        Assert.assertTrue(response.isSuccessful());
+        Assert.assertNotNull(response.body());
+        var actualName = response.body().getData().getFirstName();
+        Assert.assertEquals("Janet", actualName);
     }
 }
