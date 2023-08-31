@@ -1,4 +1,4 @@
-package designPatterns.ducks;
+package strategyPattern.ducks;
 
 public class ReadHeadDuck extends Duck {
 

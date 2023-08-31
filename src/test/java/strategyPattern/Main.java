@@ -1,9 +1,9 @@
-package designPatterns;
+package strategyPattern;
 
-import designPatterns.ducks.Duck;
-import designPatterns.ducks.MallardDuck;
-import designPatterns.ducks.ModelDuck;
-import designPatterns.fly.FlyRocketPowered;
+import strategyPattern.ducks.Duck;
+import strategyPattern.ducks.MallardDuck;
+import strategyPattern.ducks.ModelDuck;
+import strategyPattern.fly.FlyRocketPowered;
 
 public class Main {
     public static void main(String[] args) {
