@@ -7,6 +7,8 @@ public class UserCreateUpdateRequest {
     private String name;
     private String job;
 
+    public UserCreateUpdateRequest() {
+    }
     public UserCreateUpdateRequest(String name, String job) {
     }
 
