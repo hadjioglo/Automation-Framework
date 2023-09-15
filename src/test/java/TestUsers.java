@@ -55,18 +55,18 @@ public class TestUsers {
         FileInputStream propertiesFile = new FileInputStream("user.properties");
         properties.load(propertiesFile);
 
-//        UserCreateUpdateRequest request = new UserCreateUpdateRequest();
-//        String expectedName = properties.getProperty("userName");
-//        String expectedJob = "zion resident";
-//        int userId = Integer.parseInt(properties.getProperty("userId"));
-//
-//        request.setJob(expectedJob);
-//        request.setName(expectedName);
-//
-//        Response<UserUpdateResponse> response = userService.updateUser(userId, request).execute();
-//        Assert.assertNotNull(response.body());
-//        Assert.assertEquals(expectedName, response.body().getName());
-//        Assert.assertEquals(expectedJob, response.body().getJob());
+        UserCreateUpdateRequest request = new UserCreateUpdateRequest();
+        String expectedName = properties.getProperty("userName");
+        String expectedJob = "zion resident";
+        int userId = Integer.parseInt(properties.getProperty("userId"));
+
+        request.setJob(expectedJob);
+        request.setName(expectedName);
+
+        Response<UserUpdateResponse> response = userService.updateUser(userId, request).execute();
+        Assert.assertNotNull(response.body());
+        Assert.assertEquals(expectedName, response.body().getName());
+        Assert.assertEquals(expectedJob, response.body().getJob());
     }
 
     @Test
