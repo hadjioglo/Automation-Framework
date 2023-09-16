@@ -1,8 +1,8 @@
+import endpoint.UserRestService;
 import endpoint.UserService;
 import lombok.SneakyThrows;
-import models.SingleUserGetResponse;
-import models.UserCreateUpdateRequest;
 import models.UserCreateResponse;
+import models.UserCreateUpdateRequest;
 import models.UserCreateUpdateRequest.UserCreateUpdateRequestBuilder;
 import models.UserUpdateResponse;
 import org.junit.Assert;
@@ -70,13 +70,14 @@ public class TestUsers {
     }
 
     @Test
-    @SneakyThrows(IOException.class)
     public void getSingleUser() {
+        UserRestService userRestService = new UserRestService();
+        var response = userRestService.getSingleUser(2);
 
-        Response<SingleUserGetResponse> response = userService.getSingleUser(2).execute();
         Assert.assertTrue(response.isSuccessful());
         Assert.assertNotNull(response.body());
         var actualName = response.body().getData().getFirstName();
+
         Assert.assertEquals("Janet", actualName);
     }
 }

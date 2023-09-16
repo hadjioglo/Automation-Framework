@@ -16,10 +16,15 @@ public class UniversityRestService {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    UniversityService universityService = retrofit.create(UniversityService.class);
+    private final UniversityService universityService = retrofit.create(UniversityService.class);
 
     @SneakyThrows(IOException.class)
     public Response<List<UniversityResponse>> getUniversityByCountry(String country){
         return universityService.getUniversity(country).execute();
+    }
+
+    @SneakyThrows(IOException.class)
+    public Response<List<UniversityResponse>> getAllRequest() {
+        return universityService.getAll().execute();
     }
 }

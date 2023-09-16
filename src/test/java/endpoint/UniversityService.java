@@ -12,4 +12,7 @@ public interface UniversityService {
 
     @GET("search")
     Call<List<UniversityResponse>> getUniversity(@Query("country") String countryName);
+
+    @GET("search")
+    Call<List<UniversityResponse>> getAll();
 }
