@@ -1,4 +1,4 @@
-package pattern.builder;
+package patternsTraining.builder;
 
 import lombok.Getter;
 
