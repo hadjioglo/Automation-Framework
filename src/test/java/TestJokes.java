@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 
 public class TestJokes {
+
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://official-joke-api.appspot.com/")
             .addConverterFactory(GsonConverterFactory.create())
