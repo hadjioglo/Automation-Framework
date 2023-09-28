@@ -1,4 +1,4 @@
-package pattern.factory;
+package patternsTraining.factory;
 
 public class FactoryLesson {
     public static void main(String[] args) {

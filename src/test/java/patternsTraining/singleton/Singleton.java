@@ -1,4 +1,4 @@
-package pattern.singleton;
+package patternsTraining.singleton;
 
 public class Singleton {
 //Only one instance of this class can be created in th project
