@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
+import strategy.university.RomaniaUniversity;
+import strategy.university.TurkeyUniversity;
 
 import java.util.stream.Collectors;
 
@@ -44,4 +46,26 @@ public class TestUniversities {
                 .contains("RO");
         logger.error("Assertion passed" + countryCode + " contains " + "RO");
     }
+
+    @Test
+    public void compareUniversitiesOfRomaniaAndTurkey() {
+
+        RomaniaUniversity romaniaUniversity = new RomaniaUniversity();
+        var response1 = romaniaUniversity.getUniversityByCountryRomania().body();
+        romaniaUniversity.getAllUniversitiesIgroningCountryFilter();
+
+        TurkeyUniversity turkeyUniversity = new TurkeyUniversity();
+        var response2 = turkeyUniversity.getUniversityByCountryTurkey().body();
+        turkeyUniversity.getAllUniversitiesIgroningCountryFilter();
+
+        Assert.assertNotNull(response1);
+        Assert.assertNotNull(response2);
+
+        Assertions.assertThat(response1.size())
+                .describedAs("There are more universities in Romania(" + response1.size()
+                        + ") then in Turkey(" + response2.size() + ").")
+                .isLessThan(response2.size());
+    }
+
+
 }
