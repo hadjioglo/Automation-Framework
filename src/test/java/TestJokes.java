@@ -1,5 +1,5 @@
-import endpoint.JokeService;
-import models.JokeResponse;
+import org.example.endpoint.JokeService;
+import org.example.models.JokeResponse;
 import org.junit.Assert;
 import org.junit.Test;
 import retrofit2.Response;

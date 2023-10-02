@@ -1,10 +1,10 @@
-import endpoint.UserRestService;
-import endpoint.UserService;
+import org.example.endpoint.UserRestService;
+import org.example.endpoint.UserService;
 import lombok.SneakyThrows;
-import models.UserCreateResponse;
-import models.UserCreateUpdateRequest;
-import models.UserCreateUpdateRequest.UserCreateUpdateRequestBuilder;
-import models.UserUpdateResponse;
+import org.example.models.UserCreateResponse;
+import org.example.models.UserCreateUpdateRequest;
+import org.example.models.UserCreateUpdateRequest.UserCreateUpdateRequestBuilder;
+import org.example.models.UserUpdateResponse;
 import org.junit.Assert;
 import org.junit.Test;
 import retrofit2.Response;
