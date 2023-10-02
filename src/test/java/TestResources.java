@@ -1,6 +1,6 @@
-import endpoint.ResourseService;
+import org.example.endpoint.ResourseService;
 import lombok.SneakyThrows;
-import models.ResourseResponse;
+import org.example.models.ResourseResponse;
 import org.junit.Assert;
 import org.junit.Test;
 import retrofit2.Response;

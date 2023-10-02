@@ -1,16 +1,16 @@
-import endpoint.UniversityRestService;
-import models.UniversityResponse;
+import org.example.endpoint.UniversityRestService;
+import org.example.models.UniversityResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
-import strategy.university.RomaniaUniversity;
-import strategy.university.TurkeyUniversity;
+import org.example.university.RomaniaUniversity;
+import org.example.university.TurkeyUniversity;
 
 import java.util.stream.Collectors;
 
-import static enums.CountryCodeEnum.RO;
+import static org.example.enums.CountryCodeEnum.RO;
 
 public class TestUniversities {
     private static final Logger logger = LogManager.getLogger(TestUniversities.class);
