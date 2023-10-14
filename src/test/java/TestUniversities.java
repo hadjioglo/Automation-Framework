@@ -16,6 +16,7 @@ public class TestUniversities {
 
     private static final Logger logger = LogManager.getLogger(TestUniversities.class);
 
+
     @Test
     public void getUniversityOfRomania() {
         UniversityRestService universityRestService = new UniversityRestService();
