@@ -13,7 +13,9 @@ import java.util.stream.Collectors;
 import static org.example.enums.CountryCodeEnum.RO;
 
 public class TestUniversities {
+
     private static final Logger logger = LogManager.getLogger(TestUniversities.class);
+
 
     @Test
     public void getUniversityOfRomania() {
@@ -22,11 +24,11 @@ public class TestUniversities {
 
         Assert.assertNotNull(response);
         var countryCode = response.stream()
-                .map(UniversityResponse::getAlfaTwoCode)
-                .collect(Collectors.toList());
+            .map(UniversityResponse::getAlfaTwoCode)
+            .collect(Collectors.toList());
 
         Assertions.assertThat(countryCode)
-                .contains(RO.name());
+            .contains(RO.name());
         logger.error("Assertion passed" + countryCode + " contains " + "RO");
     }
 
@@ -39,17 +41,21 @@ public class TestUniversities {
 
         Assert.assertNotNull(response);
         var countryCode = response.stream()
-                .map(UniversityResponse::getAlfaTwoCode)
-                .collect(Collectors.toList());
+            .map(UniversityResponse::getAlfaTwoCode)
+            .collect(Collectors.toList());
 
         Assertions.assertThat(countryCode)
-                .contains("RO");
+            .contains("RO");
         logger.error("Assertion passed" + countryCode + " contains " + "RO");
     }
 
     @Test
     public void compareUniversitiesOfRomaniaAndTurkey() {
 
+        System.setProperty("log4j.configurationFile", "log4j2.xml");
+
+        logger.info("University test started");
+        logger.error("University test started");
         RomaniaUniversity romaniaUniversity = new RomaniaUniversity();
         var response1 = romaniaUniversity.getUniversityByCountryRomania().body();
         romaniaUniversity.getAllUniversitiesIgroningCountryFilter();
@@ -62,9 +68,12 @@ public class TestUniversities {
         Assert.assertNotNull(response2);
 
         Assertions.assertThat(response1.size())
-                .describedAs("There are more universities in Romania(" + response1.size()
-                        + ") then in Turkey(" + response2.size() + ").")
-                .isLessThan(response2.size());
+            .describedAs("There are more universities in Romania(" + response1.size()
+                             + ") then in Turkey(" + response2.size() + ").")
+            .isLessThan(response2.size());
+
+        logger.info("University test ended");
+        logger.error("University test ended");
     }
 
 
