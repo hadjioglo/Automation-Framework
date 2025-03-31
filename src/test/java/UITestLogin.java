@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-public class TestLogin {
+public class UITestLogin {
 
     private static WebDriver driver;
 

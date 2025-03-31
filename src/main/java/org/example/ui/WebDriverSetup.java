@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class WebDriverSetup {
 
     private static WebDriver driver;
@@ -34,7 +36,7 @@ public class WebDriverSetup {
     }
 
     public static void waitForElement(String elementId){
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(elementId)));
         element.click();
