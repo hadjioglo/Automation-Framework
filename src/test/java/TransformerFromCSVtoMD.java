@@ -70,7 +70,7 @@ public class TransformerFromCSVtoMD {
                 for (CSVRecord record : records) {
                     writer.write("| ");
 
-
+                    
                     for (int i = 0; i < columnCount; i++) {
                         String cellValue = "";
                         if (i < record.size()) {
@@ -85,7 +85,7 @@ public class TransformerFromCSVtoMD {
                 }
             }
         }
-
+        
         // Return the number of data rows processed (excluding header)
         return records.size();
     }
